@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mahmoud-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mahmoud
+  template:
+    metadata:
+      labels:
+        app: mahmoud
+    spec:
+      containers:
+      - name: mahmoud-container
+        image: nginx:latest  # Replace with your actual image
+        ports:
+        - containerPort: 80
